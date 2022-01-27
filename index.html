@@ -4,9 +4,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Сайт-портфолио дизайнера"/>
         <link rel="stylesheet" href="./style/style.css">
-        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <title>Portfolio</title>
     </head>
+    
     <body>
         <div class="main-page">
             <!-- ЗАГОЛОВОК -->
@@ -14,7 +19,7 @@
                 <!-- лого и автор  -->
                 <div class="author">
                     <a class="logo" href="#">
-                        <img src="./images/flea.svg" width="175" height="93" alt="flea">
+                        <img src="./images/svg/flea.svg" width="175" height="93" alt="flea">
                     </a>
                     <div class="info">
                         <span class="info__name">Наместникова Ирина</span>
@@ -25,32 +30,74 @@
                 <!-- непосредственно навигация   --> 
                 <nav class="navigation">
                     <ul class="menu">
-                        <li><a href="#">скетчи</a></li>
-                        <li><a href="#">вектор</a></li>
-                        <li><a href="№">веб</a></li>
+                        <li><a href="#">веб</a></li>
+                        <li><a href="vector.html">вектор</a></li>
+                        <li><a href="sketch.html">скетчи</a></li>
                     </ul>
                 </nav>
             </header>
 
-            <!-- КОНТЕНТ -->
-            <div class="content-wrap">
-                <div class="content">
-                    <img src="./images/pic-1.jpg" width="680" height="380" alt="lorem">
-                    <img src="./images/pic-2.jpg" width="680" height="380" alt="lorem">
-                    <img src="./images/pic-3.jpg" width="680" height="380" alt="lorem">
-                    <img src="./images/pic-4.jpg" width="680" height="380" alt="lorem">
+            <!-- НОВЫЙ КОНТЕНТ -->
+            <div class="web-content-wrap">
+                <!-- карточка с описанием и ссылкой на макет -->
+                <div class="web-content-card">
+                    <div> 
+                        <img src="./images/Green Trava mobile.png" width="454" height="380" alt="lorem">
+                    </div>
+                    <div>
+                        <p>Эта работа была проделана для небольшой мастерской крафтовой мебели. Контент тоже был написан мною.</p>
+                        <a href="https://www.figma.com/file/vKfwjJKhimA4iB0MUlmx6H/Green-Trava">Ссылка на макет в Figma</a>
+                        
+                    </div>
                 </div>
-            </div>   
+                
+                <!-- карточка с описанием и ссылкой на макет -->
+                <div class="web-content-card">
+                    <div> 
+                        <img src="./images/Pinxit.png" width="454" height="380" alt="lorem">
+                    </div>
+                    <div>
+                        <p>Дипломная работа на курсе "Продуктовый дизайнер". Приложения для творческих людей - художников и иллюстраторов. </p>
+                        <a href="https://www.figma.com/file/3SUOIdiu1USCuKJo9zCYui/Pinxit-Visual">Ссылка на макет в Figma</a>
+    
+                    </div>
+                 
+                </div>
+<!-- карточка с описанием и ссылкой на макет -->
+                <div class="web-content-card">
+                    <div> 
+                        <img src="./images/OnlyOffice.png" width="454" height="380" alt="lorem">
+                    </div>
+                    <div>
+                        <p>Тестовое задание для компании Only Office. Лэндинг главной страницы продуктов компании.</p>
+                        <a href="https://www.figma.com/file/4NDZrDkBWyDanG1N3kU5En/OnlyOffice-landing-page">Ссылка на макет в Figma</a>
+                        
+                    </div>
+                </div>
+                <div class="web-content-card">
+                    <div> 
+                        <img src="./images/redesigned.png" width="454" height="380" alt="lorem">
+                    </div>
+                    <div>
+                        <p>Эта работа была проделана для небльшой мастерской крафтовой мебели. Контент тоже был написан мною.</p>
+                        <a href="https://www.figma.com/file/vKfwjJKhimA4iB0MUlmx6H/Green-Trava">Ссылка на макет в Figma</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- КОНТЕНТ -->
+            
             <footer>
                 <ul class="social-buttons">
-                    <li><a class="instagram" href="#"> <img src="./images/instagram.svg" width="35" height="35" alt="instagram"></a></li>
-                    <li><a class="vk" href="#"><img src="./images/vk.svg" width="44" height="26" alt="vkontakte"></a></li>
-                    <li><a class="facebook" href="#"><img src="./images/fb.svg" width="18" height="36" alt="facebook"></a></li>
+                    <li><a class="instagram" href="#"> <img src="./images/svg/instagram.svg" width="35" height="35" alt="instagram"></a></li>
+                    <li><a class="vk" href="#"><img src="./images/svg/vk.svg" width="44" height="26" alt="vkontakte"></a></li>
+                    <li><a class="facebook" href="#"><img src="./images/svg/fb.svg" width="18" height="36" alt="facebook"></a></li>
                 </ul>          
             </footer> 
         </div>
 
-        <div class="darklayer">
+        <div class="darklayer visually-hidden">
 
             <div class="popup">
                 <button class="popup__button popup__button--prev"> 
@@ -66,6 +113,36 @@
                 </button>
             </div>
 
+        </div>
+
+        <div class="darklayer-about">
+
+            <div class="popup-about">
+                
+                <div>
+                    <h2>Образование:</h2>
+                    <p>ННГАСУ, архитектор</p>
+                </div>
+                
+                <div>
+                    <h2>Основные программы:</h2>
+                    <p><ul><li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Adobe InDesign</li>
+                        <li>CorelDRAW</li>
+                        <li>Figma</li>
+                        <li>Miro</li>
+                        <li>Zeplin</ol>
+                        </ul>
+                    </p>
+                </div>
+                <div>
+                    <h2>Дополнительное образование</h2>
+                    <p>Нетология, Продуктовый дизайнер 2020</p>
+                    <p>HTML Academy, HTML и CSS, уровень 1 2019</p>
+                </div>
+            </div>
+        </div>
         </div>
         <script src="./script/index.js"></script>
     </body>
