@@ -1,5 +1,5 @@
 /**
- * всего будет слайдер из 2-х картинок, 
+ * всего будет слайдер из 2-х картинок,
  * при нажатии на popup__button--next будем показывать pic-1.jpg
  * при нажатии на popup__button--prev будем показывать yup.jpg
  * Картинки будем показывать в элементе img с классом popup__image
@@ -7,7 +7,7 @@
 
 /**
  * 1 - следить за всеми кликами по блоку с классом content
- * 2 - если пользватель кликнул по картинке (тег IMG), то показать darklayer с попапом ()
+ * 2 - если пользватель кликнул по картинке (тег IMG), то показать darklayer с попапом
  * 3 - картинке, которая находится внутри попапа назначить в качестве атрибута src адрес той картинки, по которой кликнул пользователь
  * 4 - если пользователь кликнул по блоку с классом  darklayer - скрыть попап (добавим ему)
  */
@@ -24,22 +24,45 @@ const content = document.querySelector('.content');
 
 function onContentClick(event) {
     // event - это переменная, в которой содержится вся информация о клике (от класса элемента, по которому кликнули, до координат курсора мыши)
-    console.log(event);
+    // console.log(event);
     // target - это свойство в объекте event, к вотором есть вся информация об HTML-элементе, по которому кликнули
-    console.log(event.target);
+    // console.log(event.target);
     // т.к. мы считаем, что пользователь может кликнуть только по картинке (тег img), то со спокойной душой используем свойство src.
     // тут надо понимать, что при клике на div или span никакого src у элемента не будет
-    console.log(event.target.src);
+    // console.log(event.target.src);
     img.src = event.target.src;
     darklayer.classList.remove('visually-hidden');
 }
 
 // эта - для кликов по контейнеру с классом darklayer
 function onDarklayerClick(event) {
-    darklayer.classList.add('visually-hidden');
+    // закрываем окно тогда, и только тогда, когда мы кликнули по дакрлейеру, но не по содержимому модального окна
+    if(event.target.classList.contains('darklayer')) {
+        darklayer.classList.add('visually-hidden');
+        img.src = '';
+    }
+}
+// здесь мы даем команду следить за кликами пользователя
+if (content) {
+    content.addEventListener('click', onContentClick);
+    darklayer.addEventListener('click', onDarklayerClick);
 }
 
-// здесь мы даем команду следить за кликами пользователя
-content.addEventListener('click', onContentClick);
-darklayer.addEventListener('click', onDarklayerClick);
-
+// --------------------------
+// Модальное окно ABOUT
+// --------------------------
+const infoBtn = document.querySelector('.info__button');
+const aboutDarklayer = document.querySelector('.darklayer-about');
+if (aboutDarklayer) {
+    function onInfoBtnClick() {
+        aboutDarklayer.classList.remove('visually-hidden');
+    }
+    function onDarklayerClick(event) {
+        // закрываем окно тогда, и только тогда, когда мы кликнули по дакрлейеру, но не по содержимому модального окна
+        if(event.target.classList.contains('darklayer-about')) {
+            aboutDarklayer.classList.add('visually-hidden');
+        }
+    }
+    infoBtn.addEventListener('click', onInfoBtnClick);
+    aboutDarklayer.addEventListener('click', onDarklayerClick);
+}
